@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="x-icon" href="../Img/si.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/payment.css">
+
+    <title>Payment</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(126, 126, 126);
+}
+form{
+    position: absolute;
+    /*background-color: rgb(226, 226, 225);*/
+    width: 100%;
+    max-width: 500px;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid rgb(94, 94, 94);
+    background-color: white;
+    border-radius: 15px;
+    font-family:sans-serif;
+    overflow: scroll;
+
+}
+
+form::-webkit-scrollbar{
+    width: 0px;
+}
+form .l1{
+    position: relative;
+        height: 40px;
+        /*background-color:aqua;*/
+        width: 100%;
+        font-size: clamp(15px, 5vw, 25px);
+        line-height: 40px;
+        text-align: center;
+        font-weight: 900;
+    }
+
+.top_section{
+    position: relative;
+    height: 40px;
+    /*background-color: green;*/
+    margin-top: auto;
+    display: flex;
+    border-radius: 15px 15px 0 0;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight:900;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.top_section .para{
+    height: 100%;
+    width: fit-content;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.top_section #total_ammount{
+    height: 100%;
+    width: fit-content;
+}
+.top_section #total_ammount::before{
+    content: "Rs. ";
+}
+.top_section #total_ammount::after{
+    content: ".00";
+}
+.inputs{
+    position: relative;
+    /*background-color: yellow;*/
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs .divi{
+    width: 450px;
+    /*background-color: rgb(128, 128, 128);*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputs div input{
+    height: 30px;
+    width: 200px;
+    padding: 0 0 0 8px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 4px;
+}
+::placeholder {/* Firefox */
+  color: rgb(97, 96, 96);
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(97, 96, 96);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(97, 96, 96);
+}
+#exp_month,#exp_year{
+    width: 150px;
+}
+.delivery_details{
+    /*background-color: yellow;*/
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 700;
+
+}
+.delivery_details #d1{
+    display: flex;
+    flex-direction: column;
+    /*background-color: aqua;*/
+    align-items: center;
+    font-weight: 700;
+
+}
+.delivery_details #d1 input ,.delivery_details #d1 select{
+    width: 200px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(192, 192, 192);
+
+}
+.delivery_details #d2{
+    /*background-color: rgb(88, 58, 2);*/
+    height: 100px;
+}
+
+.delevery_chargers{
+    width: 100%;
+    height: 100%;
+}
+.delevery_chargers label{
+    width: fit-content;
+    height: 25px;
+    /*background-color: aqua;*/
+}
+.delevery_chargers{
+    position: relative;
+}
+#delevery_chargers{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+
+.delevery_chargers p span{
+    position: relative;
+    float:right;
+    margin-right: 10px;
+}
+.delevery_chargers p span::before{
+    content: "Rs. ";
+}
+.delevery_chargers p span::after{
+    content: ".00";
+}
+#TOT{
+    position: relative;
+    float:right;
+    margin-right: 10px;
+    border-top: 2px solid black;
+}
+#payBtn{
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    left: 40%;
+    top: 10px;
+    background-color: rgb(78, 207, 13);
+    color: black;
+    bottom: 20px;
+    line-height: 35px;
+    border:none;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 5px 50px 5px 50px;
+}
+.input_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.input_wrapper label{
+    font-size: 17px;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width:800px) {
+    form{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .divi{
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0px 10px 10px 10px;
+
+
+    }
+    .delivery_details{
+        /*background-color: red;*/
+        flex-direction: column;
+        align-items: center;
+    }
+    #d1,#d2{
+        width: 100%;
+    }
+    #d2{
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .divi{
+        
+        margin: 0px 10px 40px 10px;
+
+
+    }
+    .inputs{
+        padding-top: 30px;
+
+    }
+    #d1,#d2{
+        width: 50%;
+    }
+   
+}
+    </style>
+</head>
+
+<body>
+    
+        <form>
+            <div class="top_section">
+                <p class="para">Total Price :</p>
+                <p class="para" id="total_ammount"></p>
+            </div>
+            <div class="l1">
+                Enter your payment details
+            </div>
+            <div class="inputs">
+                <div class="divi">
+                    <div class = "input_wrapper"><label>First Name</label><input type="text" id="fname" placeholder="First Name" required></div>
+                    <div class = "input_wrapper"><label>Last Name</label><input type="text" id="lname" placeholder="Last Name" required></div>
+                </div>
+                <div class="divi">
+                    <div class = "input_wrapper"><label>Credit/Debit card number</label><input type="number" id="cardnumber" placeholder="xxxx - xxxx - xxxx - xxxx" required></div>
+                    <div class = "input_wrapper"><label>CVV</label><input type="number" id="cvv" placeholder="xxx" required></div>
+                </div>
+                <div class="divi" class="exp">
+                    <div class = "input_wrapper"><label>Month</label><input type="number" id="exp_month" placeholder="01" required></div>
+                    <div class = "input_wrapper"><label>Year</label><input type="number" id="exp_year" placeholder="22" required></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 15px; height: 40px; /*background-color:aqua;*/ width:100%; line-height: 40px; text-align:center; font-size: 20px; font-weight: 900;">
+                Delivery
+            </div>
+            <div class="delivery_details">
+                <div id="d1">
+                    <label>Address</label>
+                    <select id="destrict">
+                        <option>Kaluthara</option>
+                        <option>Colombo</option>
+                        <option>Gampaha</option>
+                    </select>
+                    <input type="text" id="address_line_1" placeholder="Lane 1" required>
+                    <input type="text" id="address_line_2" placeholder="Lane 2">
+                    <input type="text" id="address_line_3" placeholder="Lane 3">
+                </div>
+                <div id="d2">
+                    <div class="delevery_chargers">
+                        <p>Delevery <br>Chargers <span id="delevery_chargers">250</span><p>
+                        <p>Price <span class="total_ammount"></span></p>
+                        <p>Total ammount <span id="TOT"></span></p>
+                </div>
+                
+                <input type="submit" id="payBtn" value="Pay">
+
+            </div>
+        </form>
+  
+    <script>
+
+        document.getElementById("total_ammount").innerHTML = localStorage.getItem("totalAmmount");
+        document.querySelector(".total_ammount").innerHTML= parseInt(localStorage.getItem("totalAmmount"));
+        document.getElementById("TOT").innerHTML = parseInt(localStorage.getItem("totalAmmount"))+250;
+        document.getElementById('payBtn').addEventListener('click',()=>{
+            const fName = document.getElementById('fname').value;
+            const lName = document.getElementById('lname').value;
+            const cNumber = document.getElementById('cardnumber').value;
+            const cvv = document.getElementById('cvv').value;
+            const month = document.getElementById('exp_month').value;
+            const year = document.getElementById('exp_year').value;
+            const address = document.getElementById('address_line_1').value;
+            if(fName != "" && lName != "" && cNumber != "" && cvv  != "" && month  != "" && year != "" && address  != ""){
+                if(cNumber.length == 16){
+                    if(cvv.length == 3){
+                        if(month < 13){
+                            if(18<year <25 ){
+                                alert('Your payment is successful');
+                                window.open('../index.html','_blank');
+                            }else{
+                                alert('Please check the year');
+                            }
+                        }else{
+                            alert('Please check the month');
+                        }
+                    }else{
+                        alert('Please check the CVV');
+                    }
+                }else{
+                    alert('Please Check the Card Number');
+                }
+            }else{
+                alert('Please fill all details');
+            }
+
+        });
+    </script>
+</body>
+
+</html>

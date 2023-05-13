@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" type="x-icon" href="Img/si.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="CSS/Index/index.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" type="text/css" href="CSS/Index/swiper.css">
+  <link rel="stylesheet" type="text/css" href="CSS/Index/swiper_panel.css">
+  <!-- Link Swiper's CSS -->
+
+  <!-- Food_panels's CSS -->
+  <link rel="stylesheet" type="text/css" href="CSS/Index/food_panel.css">
+  <!-- Food_panels's CSS -->
+
+  <!-- cart's CSS -->
+  <link rel="stylesheet" type="text/css" href="CSS/Index/cart.css">
+  <!-- cart's CSS -->
+
+  <!-- Link navigation_bar CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="CSS/Index/navigation_bar.css">
+  <!-- Link navigation_bar CSS -->
+
+
+
+  <title>Kalana</title>
+
+</head>
+
+<body>
+  <header class="header_section" id="header_id">
+    <div id="open_slide_bar_btn" onclick="openSlideBar();">
+      <i class='bx bx-list-ul'></i>
+    </div>
+    <p><span id="first_name">Kalana </span><span id="middle_name">Food</span><span id="last_name"> Cabin</span></p>
+    <div class="open_cart_btn" onclick="openCart();" title="Cart">
+      <i class='bx bxs-cart'></i>
+    </div>
+  </header>
+
+
+
+  <div class="nav_bar">
+    <div class="header_sec">
+        <span>Menu</span>
+        <div id="close_slide_bar_btn" onclick="closeSlideBar()">
+            <i class='bx bxs-x-square'></i>
+        </div>
+    </div>
+    <div class="body_sec">
+      <div class="footer_sec">
+        <div class="box"><a href="HTML/contact_us.html" target="_blank" class="contact_us_icon"><i class='bx bxs-phone-call' title="Contact Us"></i></a></div>
+        <div class="box"><a href="HTML/delivery_areas.html" target="_blank" class = "delivery_areas_icon"><i class='bx bx-map' title="Delivery areas"></i></a></div>
+        <div class="box"><a href="HTML/about_us.html" target="_blank" class = "about_us"><i class='bx bxs-user' title="About Us"></i></a></div>
+        <div class="box"><a href="https://www.facebook.com" target="_blank" class="facebook_icon"><i class='bx bxl-facebook-circle' title="Facebook Page"></i></a></div>
+        <div class="box"><a href="https://www.youtube.com" target="_blank" class="youtube_icon"><i class='bx bxl-youtube' title="Youtube Chanel"></i></a></div>
+      </div>
+    </div>
+  
+</div>
+
+  <div class="cart">
+
+    <div class="top_section">
+      <span>Cart</span>
+      <div class="close_cart_btn" onclick="closeCart();">
+        <i class='bx bxs-x-square'></i>
+      </div>
+    </div>
+
+    <div class="body_section">
+      <table class = "table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="table_body">
+        </tbody>
+        <tfoot class=".table_footer">
+          <tr><td colspan="3">Total Price</td> <td class="text_align_right"></td><td></td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="bottom_section">
+      <input type="submit" class="place_order" value="Place Order" >
+    </div>
+
+  </div>
+
+
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+    
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+
+  </div>
+
+</div>
+
+  <div class="food_gallery">
+    
+  
+
+  </div>
+
+
+<div class="atc_banner">
+</div>
+  
+<div class="bill">
+</div>
+
+
+
+  <script>
+
+    //For open slide bar
+    function openSlideBar() {
+      var openSlideBar = document.querySelector(".nav_bar");
+      openSlideBar.style.left = "0";
+      var hidden = document.getElementById("open_slide_bar_btn")
+      hidden.style.visibility = "hidden";
+    }
+    //For Close slide bar
+    function closeSlideBar() {
+      var openSlideBar = document.querySelector(".nav_bar");
+      openSlideBar.style.left = "-260px";
+      var hidden = document.getElementById("open_slide_bar_btn")
+      hidden.style.visibility = "visible";
+      const mainMenu = document.querySelectorAll(".main_menus");
+      mainMenu.forEach((m2)=>{
+          m2.children.item(1).style.display="none";
+      });
+    }
+    //For open cart
+    function openCart() {
+      var openCart = document.querySelector('.cart');
+      openCart.style.right = "0";
+      var hideCartBtn = document.querySelector('.open_cart_btn');
+      hideCartBtn.style.visibility = "hidden";
+    }
+    //For close cart
+    function closeCart() {
+      var openCart = document.querySelector('.cart');
+      openCart.style.right = "-360px";
+      var hideCartBtn = document.querySelector('.open_cart_btn');
+      hideCartBtn.style.visibility = "visible";
+    }
+  </script>
+
+  <script>
+      //creating a class for a food. 
+      class Food {
+      constructor(cat,box,catName, name, imageName,priceS, priceM,priceL,ingS,ingM,ingL,toplist) {
+        this.catName = catName;
+        this.name=name;
+        this.priceS=priceS;
+        this.priceM=priceM;
+        this.priceL=priceL;
+        this.cat = cat;
+        this.box = box;
+        this.imageName=imageName;
+        this.ingS=ingS;
+        this.ingM = ingM;
+        this.ingL = ingL;
+        //This part has been written to identify the first food box and It is stopped creating food box in the same food box.
+        if(box <= 1){
+        document.querySelector('.food_gallery').innerHTML += '<div class="cat cat_'+cat+'"><div class="box_wrapper" ><div class="box box_'+box+'"><div class="image"></div><div class="name_wrapper"><div class="name_tag"></div></div><div class="price_wrapper"><div class="price_tag"></div><input type="submit" class="add_to_cart_btn" onclick = "total(); cat'+cat+'box'+box+'.SendDataToAtcBanner();" value="Add to Cart"></div></div></div></div>';
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .price_wrapper .price_tag').innerHTML = 'Rs. ' + priceM;
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .image').innerHTML = '<img src="Img/' + imageName + '.jpg">';
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .name_wrapper .name_tag').innerHTML = name;   
+
+        document.querySelector('.nav_bar .body_sec').innerHTML += '<div class="main_menus main_menu main_menu_'+cat+'"><div class="cat_name">'+catName+'</div></div>';
+        document.querySelector('.nav_bar .body_sec .main_menu_'+cat+'').innerHTML += '<div class="sub_menu_wrapper"><div class="sub_menu" onclick="cat'+cat+'box'+box+'.SendDataToAtcBanner(); closeSlideBar();">'+name+'</div></div>';
+
+        }else{
+        document.querySelector('.food_gallery .cat_'+cat+'').innerHTML += '<div class="box_wrapper" ><div class="box box_'+box+'"><div class="image"></div><div class="name_wrapper"><div class="name_tag"></div></div><div class="price_wrapper"><div class="price_tag"></div><input type="submit" class="add_to_cart_btn" onclick = "total(); cat'+cat+'box'+box+'.SendDataToAtcBanner();" value="Add to Cart"></div></div></div>';
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .price_wrapper .price_tag').innerHTML = 'Rs. ' + priceM;
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .image').innerHTML = '<img src="Img/' + imageName + '.jpg">';
+        document.querySelector('.cat_'+cat+' .box_' + box + ' .name_wrapper .name_tag').innerHTML = name; 
+        
+
+        document.querySelector('.nav_bar .body_sec .main_menu_'+cat+' .sub_menu_wrapper').innerHTML += '<div class="sub_menu" onclick="cat'+cat+'box'+box+'.SendDataToAtcBanner(); closeSlideBar();">'+name+'</div>';
+        }
+        // ..................................
+
+        // Other than that If the food box belongs to the top list, a food box copy is sent to the top list.
+        if(toplist == true){
+          document.querySelector('.swiper .swiper-wrapper').innerHTML += '<div class="swiper-slide swiper-slide_'+box+'"><div class="rating"><i class="fa-solid fa-star star1"></i><i class="fa-solid fa-star star2"></i><i class="fa-solid fa-star star3"></i><i class="fa-solid fa-star star4"></i><i class="fa-solid fa-star star5"></i></div><div class="picture"><img src="IMg/'+imageName+'.jpg" /><div class="name">'+name+'</div></div><div class="details"><div class="horozontal_menu"><p class="slide1_price"><span class="currency"><b>Rs. </b></span class="price"><b>'+priceM+'</b></span></p><input type="submit" class="add_to_cart" value="Add to cart" onclick = "total(); cat'+cat+'box'+box+'.SendDataToAtcBanner();"></div></div></div>';
+        }
+        //...................................
+
+      }
+
+     
+      // This function has been written for sending properties of foods to the "add to the cart banner".
+     SendDataToAtcBanner(){
+        var name_c = this.name;
+        var priceS_c = this.priceS;
+        var priceM_c = this.priceM;
+        var priceL_c = this.priceL;
+        const atcb = document.querySelector('.atc_banner');
+        atcb.style.zIndex = '100';
+        document.querySelector('.atc_banner').style.display="inline";
+        document.querySelector('.atc_banner').innerHTML = '<div class = "atc_banner_wrapper"><div class="picture"></div><div class="details"><div class="ingredients"><table class="ing_table"><thead><th>Small</th><th>Medium</th><th>Large</th></thead><tbody><tr><td><p>'+this.ingS+'</p></td><td><p>'+this.ingM+'</p></td><td><p>'+this.ingL+'</p></td></tr></tbody></table></div><div class="meal_size"><table ><tbody><tr><td><input type="checkbox" id="S_C_Box" class="Check_Box"></td><td>Small</td><td></td><td><input type="text" class="item_qty S_Item_Qty" value="0"></td><td class="tot">0</td></tr><tr><td><input type="checkbox"id="M_C_Box" class="Check_Box"></td><td>Medium</td><td></td><td><input type="text" class="item_qty M_Item_Qty" value="1"></td><td class="tot">0</td></tr><tr><td><input type="checkbox"id="L_C_Box" class="Check_Box"></td><td>Large</td><td></td><td><input type="text" class="item_qty L_Item_Qty" value="0" ></td><td class="tot">0</td></tr></tbody><tfoot class="table_footer"><td></td><td></td><td></td><td></td><td class ="colunm_total"></td></tfoot></table></div><div class="vertical_rule"></div></div><div class="btn_panel"><input type="submit" class="buy_btn" value="Buy" ><input type="submit" class="atc_btn_at_banner" value="Add to Cart"></div></div>';
+        document.querySelector('.atc_banner .picture').innerHTML ='<img src = "Img/'+this.imageName+'.jpg"><i class="bx bxs-x-square" id ="atc_banner_close_btn"></i><div class ="item_name">'+this.name+'</div>';
+        var mealSizeTable = document.querySelector('.atc_banner .details .meal_size table');
+        
+        mealSizeTable.rows[0].cells[2].innerHTML = this.priceS;
+        mealSizeTable.rows[1].cells[2].innerHTML = this.priceM;
+        mealSizeTable.rows[2].cells[2].innerHTML = this.priceL;
+
+        document.getElementById('S_C_Box').checked=false;
+        document.getElementById('M_C_Box').checked=true;
+        document.getElementById('L_C_Box').checked=false;
+
+        document.querySelector('.S_Item_Qty').setAttribute('disabled',true);
+        document.querySelector('.L_Item_Qty').setAttribute('disabled',true);
+
+        
+    
+  
+        mealSizeTable.rows[1].cells[4].innerHTML = parseInt(mealSizeTable.rows[1].cells[2].innerHTML)*parseInt(mealSizeTable.rows[1].cells[3].children.item(0).value);
+        ColunmTotal();
+
+
+        document.getElementById('atc_banner_close_btn').addEventListener('click',function(){
+          document.querySelector('.atc_banner').style.display="none";
+          closeSlideBar();
+        });
+
+        const cBox = document.querySelectorAll('.Check_Box');
+        cBox.forEach((e)=>{
+          e.addEventListener('change',function(){
+          if(e.checked==false){
+            e.parentNode.parentNode.children.item(3).children.item(0).value = 0;
+            e.parentNode.parentNode.children.item(3).children.item(0).setAttribute('disabled',true);
+          }
+          if(e.checked == true){
+            e.parentNode.parentNode.children.item(3).children.item(0).value = 1;
+            e.parentNode.parentNode.children.item(3).children.item(0).removeAttribute('disabled');
+
+          }
+          const IQty = e.parentNode.parentNode.children.item(3).children.item(0).value;
+          const iQValue = parseInt(IQty);
+          if(iQValue>0){
+                e.parentNode.parentNode.children.item(4).innerHTML =  parseInt(e.parentNode.parentNode.children.item(2).innerHTML)*parseInt(IQty); 
+              }else{
+                e.parentNode.parentNode.children.item(4).innerHTML =0;
+              }
+              ColunmTotal();
+          });
+        });
+       
+        const IQty = document.querySelectorAll('.item_qty');
+        IQty.forEach((r)=>{  
+          r.addEventListener('input',function(){
+              var IQtyInt = parseInt(r.value);
+              if(IQtyInt>0){
+                r.parentNode.parentNode.children.item(4).innerHTML =  parseInt(r.parentNode.parentNode.children.item(2).innerHTML)*parseInt(r.value); 
+              }else{
+                r.parentNode.parentNode.children.item(4).innerHTML =0;
+              }
+              ColunmTotal();
+          });
+        });
+
+
+
+        function ColunmTotal(){
+
+          var mealSizeTableColunmTotal = document.querySelector('.colunm_total');
+
+
+          const tot = document.querySelectorAll('.tot');
+          var totalVar = 0;
+          tot.forEach((lineTot)=>{
+          totalVar = totalVar + parseInt(lineTot.innerHTML);
+          });
+          mealSizeTableColunmTotal.innerHTML = totalVar;
+         
+     
+        }
+
+
+        function sendDataToCart(s,p,q){
+        var number_of_rows = document.querySelector('.table .table_body').rows.length;
+        if(number_of_rows == 0){
+          const tBody = document.querySelector('.table_body');
+                 tBody.innerHTML += "<tr><td>" +name_c +" ("+s+")</td><td>" +p+ "</td><td>"+q+"</td><td class='item_price'></td><td class = 'button_panel_table_data'><button class='up' onclick='inreaseQty(this); total();'><i class='bx bx-plus'></i></button><button class='down' onclick='decreaseQty(this); total();'><i class='bx bx-minus'></i></button><button class='delRow' onclick='deleteRaw(this); total();'><i class='bx bx-x' ></i></button></td></tr>";
+        }else if(number_of_rows>0){
+          for(var i= 0; i < number_of_rows; i++){
+               const cell = document.querySelector('.table .table_body').rows[i].cells[0].innerHTML;
+               if(cell == name_c+" ("+s+")"){
+                const qty = document.querySelector('.table .table_body').rows[i].cells[2].innerHTML;
+                document.querySelector('.table .table_body').rows[i].cells[2].innerHTML= parseInt(qty) +parseInt(q);
+                break;
+              }else if(cell != name_c+" ("+s+")" && i == number_of_rows-1){
+                  const tBody = document.querySelector('.table_body');
+                  tBody.innerHTML += "<tr><td>" +name_c +" ("+s+")</td><td>"+p+"</td><td>"+q+"</td><td class='item_price'></td><td class = 'button_panel_table_data'><button class='up' onclick='inreaseQty(this); total();'><i class='bx bx-plus'></i></button><button class='down' onclick='decreaseQty(this); total();'><i class='bx bx-minus'></i></button><button class='delRow' onclick='deleteRaw(this); total();'><i class='bx bx-x' ></i></button></td></tr>";
+              }
+          }
+        }
+        total();
+        
+        
+        document.querySelector('.cart .place_order').addEventListener('click',()=>{
+         document.querySelector('.bill').style.display="inline";
+        document.querySelector('.bill').style.zIndex="10";
+        document.querySelector('.bill').innerHTML = '<div class ="bill_wrapper"><i class="bx bxs-x-square" id ="bill_close_btn"></i><div class="top_sec"><h1>Kalana Food Cabin</h1><h2>Invoice</h2><h2><span id ="invoice_number">No: 0001</span><span id="time">Time</span><span id="date">Date: </span></h2></div><div class="list"><div class = "table_wrapper"><table><thead><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></thead><tbody></tbody><tfoot><tr><td></td><td></td><td></td><td class ="total"></tr></tfoot></td></table></div><a href="HTML/payment.html"><input type="submit" class="paybtn" value="Pay"></a></div></div>';
+          realTimeClock();
+        function realTimeClock(){
+        var d = new Date();
+        let year = d.getFullYear();
+        let month = d.getMonth() +1;
+        let date = d.getDate();
+        
+
+        var hours = d.getHours();
+        var munites = d.getMinutes();
+        var ampm = (hours > 12)? "PM" : "AM";
+
+        hours = ("0"+ hours).slice(-2);
+        munites = ("0"+munites).slice(-2);
+
+        document.querySelector("#time").innerHTML=hours+" : "+munites+" "+ampm;
+        document.querySelector("#date").innerHTML=date+"/"+month+"/"+year;
+        var t = setTimeout(realTimeClock,500);
+
+        
+      }
+      closeCart();
+      // send data to bill from cart
+      const trs = document.querySelectorAll('.cart table tbody tr');
+      const billtable = document.querySelector('.bill .bill_wrapper .list table tbody');
+        trs.forEach((tr)=>{
+        billtable.innerHTML += '<tr><td>'+tr.children.item(0).innerHTML+'</td><td>'+tr.children.item(1).innerHTML+'</td><td>'+tr.children.item(2).innerHTML+'</td><td class="text_align_right">'+tr.children.item(3).innerHTML+'</td></tr>';
+        });
+
+      const number_of_rows = document.querySelector('.bill table tbody').rows.length;
+      var to = 0;
+      for(var j=0; j<number_of_rows; j++){
+        var l = document.querySelector('.bill table tbody').rows[j].cells[3].innerHTML;
+         to = to + parseInt(l); 
+      }
+
+      document.querySelector('.bill tfoot .total').innerHTML = to;
+
+      document.getElementById("bill_close_btn").addEventListener("click",()=>{
+          document.querySelector(".bill").style.display="none";
+        });
+
+
+      document.querySelector('.paybtn').addEventListener('click',()=>{
+        document.querySelector('.bill').style.display="none";
+        const totalAmmount = document.querySelector(".bill .list .total").innerHTML;
+        localStorage.clear();
+        localStorage.setItem("totalAmmount",totalAmmount);
+        const nor = document.querySelectorAll(".cart table tbody tr");
+        nor.forEach((NOR)=>{
+          NOR.remove();
+        });
+        total();
+        });
+
+    });
+
+
+      }
+
+
+
+
+       document.querySelector('.atc_banner .atc_btn_at_banner').addEventListener('click', function(){
+
+        const cBox = document.querySelectorAll('.Check_Box');
+        cBox.forEach((cb)=>{
+            const size = cb.parentNode.parentNode.children.item(1).innerHTML;
+            const quantity = cb.parentNode.parentNode.children.item(3).children.item(0).value;
+            const name = cb.parentNode.parentNode.children.item(0).innerHTML;
+            if(cb.checked==true){
+            if(size == "Small"){
+              sendDataToCart('S',priceS_c,quantity);
+            }
+            if(size == "Medium"){
+              sendDataToCart('M',priceM_c,quantity);
+            }
+            if(size == "Large"){
+              sendDataToCart('L',priceL_c,quantity);
+            }
+
+          }
+        });
+
+        //document.querySelector('.atc_banner_wrapper').remove();
+        document.querySelector('.atc_banner').style.display="none";
+         
+       });
+
+
+       document.querySelector('.buy_btn').addEventListener('click', function(){
+        document.querySelector('.bill').innerHTML = '<div class ="bill_wrapper"><i class="bx bxs-x-square" id ="bill_close_btn"></i><div class="top_sec"><h1>Kalana Food Cabin</h1><h2>Invoice</h2><h2><span id ="invoice_number">No: 0001</span><span id="time">Time</span><span id="date">Date: </span></h2></div><div class="list"><div class = "table_wrapper"><table><thead><th>Name</th><th>Price</th><th>Qty</th><th>Total</th></thead><tbody></tbody><tfoot><tr><td></td><td></td><td></td><td class ="total"></tr></tfoot></table></div><a href="HTML/payment.html"><input type="submit" class="paybtn" value="Pay"></a></div></div>';
+        realTimeClock();
+        function realTimeClock(){
+        var d = new Date();
+        let year = d.getFullYear();
+        let month = d.getMonth() +1;
+        let date = d.getDate();
+        
+
+        var hours = d.getHours();
+        var munites = d.getMinutes();
+        var ampm = (hours > 12)? "PM" : "AM";
+
+        hours = ("0"+ hours).slice(-2);
+        munites = ("0"+munites).slice(-2);
+
+        document.querySelector("#time").innerHTML=hours+" : "+munites+" "+ampm;
+        document.querySelector("#date").innerHTML=date+"/"+month+"/"+year;
+        var t = setTimeout(realTimeClock,500);
+       }
+
+      
+        document.querySelector('.bill').style.display="inline";
+        document.querySelector('.bill').style.zIndex="10";
+
+        document.querySelector('.atc_banner').style.display="none";
+        const cBo = document.querySelectorAll('.Check_Box');
+        cBo.forEach((cB)=>{
+          if(cB.checked){
+            console.log(cB.parentNode.parentNode.children.item(1).innerHTML);
+            if(cB.parentNode.parentNode.children.item(1).innerHTML == 'Small'){
+
+              const qt = parseInt(document.querySelector('.S_Item_Qty').value);
+              const toT = qt * parseInt(priceS_c);
+              document.querySelector('.bill_wrapper table tbody').innerHTML += '<tr><td>'+name_c+' (S)</td><td>'+priceS_c+'</td><td>'+qt+'</td><td class="text_align_right">'+toT+'</td></tr>';
+            }
+            if(cB.parentNode.parentNode.children.item(1).innerHTML == 'Medium'){
+
+              const qt = parseInt(document.querySelector('.M_Item_Qty').value);
+              const toT = qt * parseInt(priceM_c);
+              document.querySelector('.bill_wrapper table tbody').innerHTML += '<tr><td>'+name_c+' (M)</td><td>'+priceM_c+'</td><td>'+qt+'</td><td class="text_align_right">'+toT+'</td></tr>';
+            }
+            if(cB.parentNode.parentNode.children.item(1).innerHTML == 'Large'){
+ 
+              const qt = parseInt(document.querySelector('.L_Item_Qty').value);
+              const toT = qt * parseInt(priceL_c);
+              document.querySelector('.bill_wrapper table tbody').innerHTML += '<tr><td>'+name_c+' (L)</td><td>'+priceL_c+'</td><td>'+qt+'</td><td class="text_align_right">'+toT+'</td></tr>';
+            }
+          }
+        });
+
+        const number_of_rows = document.querySelector('.bill table tbody').rows.length;
+      var to = 0;
+      for(var j=0; j<number_of_rows; j++){
+        var l = document.querySelector('.bill table tbody').rows[j].cells[3].innerHTML;
+         to = to + parseInt(l); 
+      }
+
+      document.querySelector('.bill tfoot .total').innerHTML = to;
+        
+        document.getElementById("bill_close_btn").addEventListener("click",()=>{
+          document.querySelector(".bill").style.display="none";
+        });
+
+        document.querySelector('.paybtn').addEventListener('click',()=>{
+          document.querySelector('.bill').style.display="none";
+          const totalAmmount = document.querySelector(".bill .list .total").innerHTML;
+          localStorage.clear();
+          localStorage.setItem("totalAmmount",totalAmmount);
+
+        });
+
+       });
+
+
+
+      } 
+
+
+  
+
+
+
+    }
+    // (1) categorry , (2) box number ,(3) categorry name , (4) name , (5) image name , (6) price small , (7) price medium , (8) price large , (9) discount , (10) toplist 
+    var cat1box1 = new Food(1,'1','Rice','Frid rice', "friedrice",100, 950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+    var cat1box2 = new Food(1,'2','Rice','Nasiguran', "nasiguran",100,650.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat1box3 = new Food(1,'3','Rice','Sea Food', "seafood",100,1000.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat1box4 = new Food(1,'4','Rice','Biriyani', "biriyani",100,800.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+    var cat1box5 = new Food(1,'5','Rice','Mix Rice', "mixrice",100,1200.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+    var cat1box6 = new Food(1,'6','Rice','Set Menu', "setmenu",100,1200.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+
+
+    var cat2box1 = new Food(2,'1','Kottu', 'Chicken Kottu', "chickenkottu",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat2box2 = new Food(2,'2','Kottu', 'Egg Kottu', "eggkottu",100,650.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+    var cat2box3 = new Food(2,'3','Kottu', 'Pork kottu', "porkkottu",100,1000.00,10,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat2box4 = new Food(2,'4','Kottu', 'Beef Kottu', "beefkottu",100,800.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+    var cat2box5 = new Food(2,'5','Kottu', 'Indiappa Kottu', "indiappakottu",100,1200.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat2box6 = new Food(2,'6','Kottu', 'Vegitable Kottu', "vegitablekottu",100,1200.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",true);
+
+    var cat3box1 = new Food(3,'1','Noodles / Pasta', 'Chicken Noodles', "chickennoodles",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat3box2 = new Food(3,'2','Noodles / Pasta', 'SeaFood Noodles', "seafoodnoodles",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat3box3 = new Food(3,'3','Noodles / Pasta', 'Devild Noodles', "devilednoodles",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat3box4 = new Food(3,'4','Noodles / Pasta', 'Chineese Noodles', "chineesenoodles",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat3box5 = new Food(3,'5','Noodles / Pasta', 'Pasta', "pasta",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat3box6 = new Food(3,'6','Noodles / Pasta', 'Cheese pasta', "cheesepasta",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+
+    var cat4box1 = new Food(4,'1','Dishes', 'Crispy Chicken', "crispychicken",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat4box2 = new Food(4,'2','Dishes', 'Chicken Deviled', "chickendeviled",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat4box3 = new Food(4,'3','Dishes', 'Pork Deviled', "porkdeviled",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat4box4 = new Food(4,'4','Dishes', 'Beef Deviled', "beefdeviled",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+    var cat4box5 = new Food(4,'5','Dishes', 'Dry Fish', "dryfish",100,950.00,100,"Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2","Omblet - 1<br>Chicken leg - 1<br>sosage - 2",false);
+
+    function deleteRaw(r){
+      console.log(r.parentNode.parentNode.rowIndex-1);
+        const i = r.parentNode.parentNode.rowIndex-1;
+        
+       document.querySelector('.table_body').deleteRow(i);
+    }
+    function inreaseQty(r){
+      const i = r.parentNode.parentNode.children.item(2).innerHTML;
+      r.parentNode.parentNode.children.item(2).innerHTML = parseInt(i)+1;
+    }
+    function decreaseQty(r){
+        const i = r.parentNode.parentNode.children.item(2).innerHTML;
+      if(i>1){
+        r.parentNode.parentNode.children.item(2).innerHTML = parseInt(i)-1;
+      }
+    }
+
+    function total(){
+      const number_of_rows = document.querySelector('.table_body').rows.length;
+      for(var j=0; j<number_of_rows; j++){
+        const price = document.querySelector('.table_body').rows[j].cells[1].innerHTML;
+        const qty = document.querySelector('.table_body').rows[j].cells[2].innerHTML;
+        document.querySelector('.table_body').rows[j].cells[3].innerHTML = parseInt(price)*parseInt(qty);
+      }
+      var tot = 0;
+      for(var j=0; j<number_of_rows; j++){
+        var k = document.querySelector('.table_body').rows[j].cells[3].innerHTML;
+         tot = tot + parseInt(k); 
+      }
+      document.querySelector('.cart tfoot').rows[0].cells[1].innerHTML = tot;
+       
+      }
+      
+      if(window.matchMedia("(min-width:600px)").matches){ 
+        const mainMenu = document.querySelectorAll(".main_menus");
+            mainMenu.forEach((m1)=>{
+                m1.addEventListener("mouseover",()=>{
+                  //document.querySelectorAll(".sub_menu_wrapper").style.display = "none";
+                    const v = m1.children.item(1);
+                    const vv = getComputedStyle(v).display;
+                    if (vv == "none") {
+                        const otherMainMenus = document.querySelectorAll(".sub_menu_wrapper");
+                        otherMainMenus.forEach((o) => {
+                            o.style.display = "none";
+                        });
+                        m1.children.item(1).style.display = "inline";
+                    }
+                });
+                m1.addEventListener('mouseout',()=>{
+                  const otherMainMenus = document.querySelectorAll(".sub_menu_wrapper");
+                        otherMainMenus.forEach((o1) => {
+                            o1.style.display = "none";
+                        });
+                });
+            });
+
+      }  
+
+      const sw = document.querySelectorAll('.sub_menu_wrapper');
+      sw.forEach((sW)=>{
+        sW.addEventListener('mouseout',()=>{
+          sW.style.display='none';
+        });
+      });
+      
+
+
+const mainMenu = document.querySelectorAll(".main_menus");
+            mainMenu.forEach((m)=>{
+                m.children.item(0).addEventListener("click",()=>{
+                  //document.querySelectorAll(".sub_menu_wrapper").style.display = "none";
+                    const v = m.children.item(1);
+                    const vv = getComputedStyle(v).display;
+                    if (vv == "none") {
+                        const otherMainMenus = document.querySelectorAll(".sub_menu_wrapper");
+                        otherMainMenus.forEach((o) => {
+                            o.style.display = "none";
+                        });
+                        m.children.item(1).style.display = "inline";
+                    }else{
+                        const otherMainMenus = document.querySelectorAll(".sub_menu_wrapper");
+                        otherMainMenus.forEach((o) => {
+                            o.style.display = "none";
+                        });
+                    }
+                });
+            });
+  </script>
+
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: true,
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        modifier: 0, //opasity
+        slideShadows: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+</body>
+
+</html>

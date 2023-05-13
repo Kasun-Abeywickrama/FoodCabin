@@ -1,0 +1,460 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    /*background-color: rgb(219, 219, 219);*/
+    background-image: linear-gradient(45deg,black,rgb(212, 2, 2),black);
+    font-family: sans-serif;
+    height: 100%;
+}
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+.header_section{
+    width: 100%;
+    height: clamp(50px, 6vh, 8vh);
+    position:fixed;
+    top: 0;
+    background-image: linear-gradient(180deg,red,black);
+    color:#e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.header_section i{
+    font-size: 40px;
+}
+
+#open_slide_bar_btn{
+    position: absolute;
+    left: 10px;
+}
+header p span{
+    padding-right: 20px;
+}
+.open_cart_btn{
+    position: absolute;
+    right: 10px;
+}
+@media (max-width: 530px) { 
+    #last_name{
+        display: none;
+    }
+    #middle_name::after{
+        content: "s";
+    }
+ }
+ @media (max-width: 400px) { 
+    #middle_name{
+        display: none;
+    }
+
+ }
+ @media (max-width: 280px) { 
+    #first_name{
+        display: none;
+    }
+ }
+ @media (max-width: 280px) { 
+    #first_name{
+        display: none;
+    }
+ }
+
+
+
+ 
+.header_section p{
+    text-align: center;
+    font-size: clamp(40px, 3.5vw, 70px);
+    /*font-weight: 900;*/
+    line-height: clamp(50px, 6vh, 8vh);
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    
+}
+
+.atc_banner{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(219, 219, 219, 0.9);   
+    display: none;
+
+}
+
+
+.atc_banner_wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 80%;
+    max-width: 900px;
+    /*background-color: rgb(136, 136, 136);*/
+    border-radius: 10px;
+}
+
+.atc_banner .picture{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    /*background-color: chartreuse;*/
+    background-image: linear-gradient(90deg,black,red,black);
+    border-radius: 10px 10px 0 0;
+}
+.atc_banner .picture img{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 75%;
+ 
+    
+}
+.atc_banner .item_name{
+        font-size: clamp(5px,5vh,40px);
+        position: absolute;
+        bottom: 5%;
+        justify-content: center;
+        height: 10%;
+}
+
+
+.atc_banner .details{             
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50%;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+background-color: rgb(150, 16, 16);
+}
+
+
+
+.atc_banner .details  .meal_size{
+    position: relative;
+    right: 0px;
+    display: flex;
+    flex: 50%;
+    align-items: center;
+    justify-content: center;
+    /*background-color: orange;*/
+    font-weight: 600;
+    font-size: 16px;
+}
+.atc_banner .details .ingredients{
+    position: relative;
+    /*background-color: orangered;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 50%;
+    font-weight: 600;
+
+
+}
+
+.atc_banner .details  .meal_size table{
+    width: 80%;
+    height: 80%;
+    max-width: 300px;
+    max-height: 120px;
+    
+}
+
+
+.ing_table{
+
+    width: 90%;
+    height: fit-content;
+    max-width: 700px;
+    border-collapse: collapse;
+
+}
+
+
+.atc_banner .details  .meal_size .tot,.colunm_total{
+text-align: right;
+}
+
+.atc_banner .details  .meal_size .colunm_total{
+    border-top: 3px solid black;
+}
+.atc_banner .details .meal_size input{
+    width: 50px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+
+
+
+.atc_banner .btn_panel{
+    position: relative;
+    height: 10%;
+    background-color: rgb(150, 16, 16);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.atc_banner .btn_panel input{
+    width: 120px;
+    height: 60%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 800;
+    background-color: wheat;
+   
+}
+.atc_banner .btn_panel input:hover{
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.atc_banner .btn_panel .buy_btn{
+    position: absolute;
+    right:140px;
+}
+
+.atc_banner .btn_panel .atc_btn_at_banner{
+    position: absolute;
+    right: 10px;
+}
+
+
+
+
+
+.bill{
+    z-index: -5;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    width: 100%;
+    height: 100%;
+    /*background-color: white;*/
+    background-image: linear-gradient(180deg,red,black);
+  
+}
+.bill .bill_wrapper{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    max-height: 800px;
+    background-color: rgb(141, 75, 75);
+    border-radius: 10px;
+
+}
+.bill .top_sec{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+.bill .top_sec h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom:10px ;
+}
+.bill .top_sec h2{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+.bill .top_sec h2 span{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    float: right;
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.bill .list{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+
+}
+.bill .table_wrapper{
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.bill .table_wrapper::-webkit-scrollbar{
+    width: 0;
+}
+
+
+  
+  .bill .table_wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgb(51, 51, 51); 
+  }
+.bill .list table{
+    position: relative;
+    width: 100%;
+    background-color: rgb(201, 129, 129);
+    border-radius: 5px;
+}
+
+.bill .list table td{
+    width: fit-content;
+}
+.bill .list table th{
+    border: none;
+    text-align: left;
+} 
+
+.bill .paybtn{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    width: 200px;
+    margin-top: 20px;
+    float: right;
+}
+
+.bill .paybtn:hover{
+    background-color: rgb(42, 252, 42);
+    cursor: pointer;
+}
+
+#bill_close_btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+}
+.bill .total{
+    border-top: 2px solid black;
+}
+
+
+
+
+#atc_banner_close_btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 35px;
+    background-color: rgb(0, 0, 0);
+    color: wheat;
+    width:25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media(orientation:portrait){
+    .atc_banner .details{
+        flex-direction: column;    
+    }
+    .atc_banner .details .ingredients,.meal_size{
+        width: 100%;
+        height: 50%;
+    }
+}
+
+
+@media screen and (max-width:550px) and (orientation:landscape) {
+    .atc_banner .details .ingredients{
+       
+        display: none;
+        
+    }
+}
+
+
+/*For mobile phone*/
+@media screen and (orientation:portrait) and (max-width: 750px){ 
+    .atc_banner .atc_banner_wrapper{
+        width: 100%;
+        height: 100%;
+    }
+    .ing_table{
+        font-size: clamp(12px,3.5vw + 1px,200px);
+    }
+}
+@media screen and (orientation:landscape) and (max-height:750px){
+    .atc_banner .atc_banner_wrapper{
+        width: 100%;
+        height: 100%;
+    }
+  
+}
+@media screen and (min-height:350px) and (orientation:landscape){
+    .atc_banner .atc_banner_wrapper .picture{
+        height: 55%;
+    }.atc_banner .atc_banner_wrapper .details{
+        height: 35%;
+        transition: 0.4s;
+    }
+}
+
+.ing_table thead th{
+    border: 2px solid black;
+}
+.ing_table tbody td{
+    border: 2px solid black;
+}
+.text_align_right{
+    text-align: right;
+}
+
+.bill tfoot .total{
+    text-align: right;
+}
+

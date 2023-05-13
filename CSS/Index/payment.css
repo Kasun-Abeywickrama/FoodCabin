@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(126, 126, 126);
+}
+form{
+    position: absolute;
+    /*background-color: rgb(226, 226, 225);*/
+    width: 100%;
+    max-width: 500px;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid rgb(94, 94, 94);
+    background-color: white;
+    border-radius: 15px;
+    font-family:sans-serif;
+    overflow: scroll;
+
+}
+
+form::-webkit-scrollbar{
+    width: 0px;
+}
+form .l1{
+    position: relative;
+        height: 40px;
+        /*background-color:aqua;*/
+        width: 100%;
+        font-size: clamp(15px, 5vw, 25px);
+        line-height: 40px;
+        text-align: center;
+        font-weight: 900;
+    }
+
+.top_section{
+    position: relative;
+    height: 40px;
+    /*background-color: green;*/
+    margin-top: auto;
+    display: flex;
+    border-radius: 15px 15px 0 0;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight:900;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.top_section .para{
+    height: 100%;
+    width: fit-content;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.top_section #total_ammount{
+    height: 100%;
+    width: fit-content;
+}
+.top_section #total_ammount::before{
+    content: "Rs. ";
+}
+
+.inputs{
+    position: relative;
+    /*background-color: yellow;*/
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs .divi{
+    width: 450px;
+    /*background-color: rgb(128, 128, 128);*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputs div input{
+    height: 30px;
+    width: 200px;
+    padding: 0 0 0 8px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 4px;
+}
+::placeholder {/* Firefox */
+  color: rgb(97, 96, 96);
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(97, 96, 96);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(97, 96, 96);
+}
+#exp_month,#exp_year{
+    width: 150px;
+}
+.delivery_details{
+    /*background-color: yellow;*/
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 700;
+
+}
+.delivery_details #d1{
+    display: flex;
+    flex-direction: column;
+    /*background-color: aqua;*/
+    align-items: center;
+    font-weight: 700;
+
+}
+.delivery_details #d1 input ,.delivery_details #d1 select{
+    width: 200px;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(192, 192, 192);
+
+}
+.delivery_details #d2{
+    /*background-color: rgb(88, 58, 2);*/
+    height: 100px;
+}
+
+.delevery_chargers{
+    width: 100%;
+    height: 100%;
+}
+.delevery_chargers label{
+    width: fit-content;
+    height: 25px;
+    /*background-color: aqua;*/
+}
+.delevery_chargers{
+    position: relative;
+}
+#delevery_chargers{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+
+.delevery_chargers p span{
+    position: relative;
+    float:right;
+    margin-right: 10px;
+}
+
+
+#TOT{
+    position: relative;
+    float:right;
+    margin-right: 10px;
+    border-top: 2px solid black;
+}
+#payBtn{
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    left: 40%;
+    top: 10px;
+    background-color: rgb(78, 207, 13);
+    color: black;
+    bottom: 20px;
+    line-height: 35px;
+    border:none;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 5px 50px 5px 50px;
+}
+.input_wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.input_wrapper label{
+    font-size: 17px;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width:800px) {
+    form{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .divi{
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0px 10px 10px 10px;
+
+
+    }
+    .delivery_details{
+        /*background-color: red;*/
+        flex-direction: column;
+        align-items: center;
+    }
+    #d1,#d2{
+        width: 100%;
+    }
+    #d2{
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width:500px) {
+    .divi{
+        
+        margin: 0px 10px 40px 10px;
+
+
+    }
+    .inputs{
+        padding-top: 30px;
+
+    }
+    #d1,#d2{
+        width: 50%;
+    }
+   
+}

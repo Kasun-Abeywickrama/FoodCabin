@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+.box {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: yellowgreen;*/
+}
+.box p{
+    width: 100%;
+    height: fit-content;
+    overflow-y: scroll;
+    margin-top:30px;
+    text-align: justify;
+    font-size: 20px;
+}
+.box p::-webkit-scrollbar{
+    width: 0;
+}
+.box h1{
+    margin-top: 30px;
+}
+@media screen and (max-width:800px) {
+
+    .container{
+    width: 100vw;
+    height: 100%;
+}
+
+}

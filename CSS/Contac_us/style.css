@@ -1,0 +1,39 @@
+
+
+.container_wrapper{
+    overflow: scroll;
+
+}
+.container_wrapper::-webkit-scrollbar{
+    width: 0px;
+}
+.container{
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    overflow: scroll;
+}
+.container::-webkit-scrollbar{
+    width: 0px;
+}
+.box{
+    /*background-color: green;*/
+    margin: 30px 10px 0px 10px;
+    font-size: 25px;
+    height: 50px;
+    width: 350px;
+    line-height: 50px;
+    position: relative;
+
+   
+}
+.box span{
+    height: 100%;
+    line-height: 50px;
+    margin-left: 50px;
+    text-align: right;
+}
+.box span i{
+    font-size: 35px;
+}

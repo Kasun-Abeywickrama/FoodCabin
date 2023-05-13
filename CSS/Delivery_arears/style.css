@@ -1,0 +1,12 @@
+.box{
+    /*background-color: greenyellow;*/
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 800;
+    width: 200px;
+    height: 200px;
+}
+.container{
+    display: flex;
+    justify-content: left;
+}

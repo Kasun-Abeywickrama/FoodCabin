@@ -1,0 +1,152 @@
+.cart{
+    position: fixed;
+    top: clamp(50px, 6vh, 8vh);
+    background-image: linear-gradient(180deg,red,rgb(105, 0, 0));
+    right: -360px;
+    width: 350px;
+    height: 100vh;
+    z-index: 10;
+    transition: .4s;
+}
+
+.cart .top_section{
+    position: relative;
+    background-image: linear-gradient(0deg,red,rgb(20, 0, 0));
+    /*background-color: yellow;*/
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart .top_section span{
+    color: wheat;
+    font-weight: 700;
+}
+
+
+
+
+.close_cart_btn{
+    position: absolute;
+    right: 10px;
+    font-size: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+.close_cart_btn i{
+    color: wheat;
+    font-weight: 0;
+}
+
+.cart .body_section{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /*background-color: green;*/
+    max-height: calc(100vh - (6vh + 150px));
+    overflow-y: scroll;
+
+}
+.cart .body_section::-webkit-scrollbar{
+    width: 0;;
+}
+
+.cart .body_section table{
+    width: 90%;
+    border: 3px solid black;
+    height: fit-content;
+    
+}
+
+.button_panel_table_data{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100px;
+}
+
+.cart .body_section .table th{
+    font-size: 15px;
+}
+
+.cart .body_section .table .table_body .up{
+    background-color: rgb(152, 236, 17);
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(152, 236, 17);
+    width: auto;
+    height: auto;
+   
+}
+.cart .body_section .table .table_body .up i{
+    background-color: rgb(152, 236, 17);
+    margin: 1px;
+}
+
+.cart .body_section .table .table_body .button_panel_table_data{ 
+    
+ text-align: center;
+}
+
+.cart .body_section .table .table_body .down{
+    background-color: crimson;
+    width: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    width: auto;
+    height: auto;
+   
+}
+
+.cart .body_section .table .table_body .delRow{
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    width: auto;
+    height: auto;
+    background-color: crimson;
+}
+.cart .body_section .table .table_body  i{
+    font-size: 25px;
+    font-weight: bolder;
+    
+
+}
+.cart .bottom_section{
+    position: absolute;
+    bottom: 5%;
+    height: 100px;
+    width: 100%;
+    /*background-color: blue;*/
+    
+}
+
+.cart .bottom_section .place_order{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    height: 45px;
+    width: 150px;
+    font-weight: 600;
+    font-size: larger;
+    border:3px solid black;
+    border-radius: 10px;
+}
+
+.cart .bottom_section .place_order:hover{
+    background-color: rgb(150, 231, 28);
+    
+}
+
+.cart .item_price{
+    text-align: right;
+}

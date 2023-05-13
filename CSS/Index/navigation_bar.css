@@ -1,0 +1,178 @@
+.nav_bar{
+    position: fixed;
+    top: clamp(50px, 6vh, 8vh);
+    left: -260px;
+    /*background-color: blue;*/
+    width: 250px;
+    height: 100vh;
+    z-index: 100;
+    transition: .4s;
+}
+
+
+.header_sec{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /*background-color: red;*/
+    background-image: linear-gradient(0deg,red,rgb(20, 0, 0));
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    align-items: center;
+}
+
+
+
+.header_sec .bx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7px;
+}
+
+.body_sec{
+    width: 100%;
+    height: calc(100vh - (50px + clamp(50px, 6vh, 8vh)));
+    background-image: linear-gradient(180deg,red,rgb(10, 5, 5));
+}
+
+.body_sec::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  .body_sec::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  .body_sec::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255); 
+  }
+  
+  .body_sec::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255); 
+  }
+
+.main_menus{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    /*background-color: yellow;*/
+    cursor: pointer;
+}
+
+#close_slide_bar_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#close_slide_bar_btn i{
+    width: 40px;
+    font-size: 40px;
+}
+
+.cat_name{
+    width: 100%;
+    height: 50px;
+    /*margin: 0 0 10px 0;*/
+    background-image: linear-gradient(180deg,red,rgb(10, 5, 5));
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: wheat;
+    margin-bottom: 5px;
+}.sub_menu_wrapper{
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    cursor: pointer;
+
+}
+
+.sub_menu{
+    width: 100%;
+    /*background-color: rgb(226, 49, 43);*/
+    background-image: linear-gradient(270deg,rgb(172, 119, 119),rgb(0, 0, 0));
+    height: 40px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    color: wheat;
+
+}
+.sub_menu:hover{
+    background-image: linear-gradient(270deg,rgb(172, 119, 119),rgb(168, 167, 167));
+
+}
+
+@media screen and (orientation:portrait) and (max-width: 600px){ 
+    .body_sec{
+        overflow-y: scroll;
+    }
+    .sub_menu_wrapper{
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    .body_sec::-webkit-scrollbar{
+        width: 0;
+    }
+}
+@media screen and (orientation:landscape) and (max-width:960px){
+.body_sec{
+        overflow-y: scroll;
+    }
+    .sub_menu_wrapper{
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    .body_sec::-webkit-scrollbar{
+        width: 0;
+    }
+  
+}
+.footer_sec{
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(216, 205, 205);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+}
+.footer_sec .box{ 
+   /* background-color: blue;*/
+    width: 58px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_sec .box a{
+    text-align: center;
+    font-size: 40px;
+    /*background-color: yellow;*/
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    
+ }
+ .youtube_icon{
+     color: red;
+ }
+ .delivery_areas_icon{
+    color: red;
+ }
